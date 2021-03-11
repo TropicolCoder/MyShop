@@ -1,2 +1,5 @@
 celery -A myshop worker -l info --pool=solo
 pip3 install python-dotenv
+from dotenv import load_dotenv
+load_dotenv()
+SECRET_KEY = str(os.getenv('SECRET_KEY'))
