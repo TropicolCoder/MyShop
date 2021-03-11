@@ -1,1 +1,2 @@
 celery -A myshop worker -l info --pool=solo
+pip3 install python-dotenv
