@@ -3,3 +3,6 @@ pip3 install python-dotenv
 from dotenv import load_dotenv
 load_dotenv()
 SECRET_KEY = str(os.getenv('SECRET_KEY'))
+git commit --amend
+git push --force
+git rm -rf --cached
