@@ -25,3 +25,6 @@ vine==1.3.0
 wcwidth==0.2.5
 
 braintree~=3.59.0
+requests~=2.25.1
+python-dateutil~=2.8.1
+pypaystack~=1.24

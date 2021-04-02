@@ -1,0 +1,25 @@
+<body onload="payWithPaystack()">
+<script src="https://js.paystack.co/v1/inline.js"></script>
+<script>
+window.onload=function($){
+  payWithPaystack();
+};
+function payWithPaystack(){
+  var handler = PaystackPop.setup({
+    key: '{{public_key}}',
+    email:'{{email}}',
+    amount: {{total_cost}} *100,
+    currency: "NGN",
+    callback: function(response){
+    var referenceid = response.reference
+
+    window.location.href = "/paystack/verify/" + referenceid
+    },
+    onClose: function(){
+    alert('Transaction was not completed, window closed');
+    }
+  });
+  handler.openIframe();
+}
+</script>
+</body>
