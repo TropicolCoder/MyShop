@@ -1,19 +1,10 @@
-import os
-import json
-from paystack.api import signals
-from paystack import utils
 from django.urls import reverse
 from django.shortcuts import render, redirect, HttpResponse
-from django.http import JsonResponse
-from django.views.generic import RedirectView, TemplateView
 from .models import OrderItem
 from cart.cart import Cart
 from .tasks import order_created
 from . import settings
-from paystack.utils import load_lib
 from .forms import OrderCreateForm
-from paystack.api.signals import payment_verified
-from django.dispatch import receiver
 
 
 # Create your views here.

@@ -6,5 +6,6 @@ from . import views
 
 urlpatterns = [
     path('process/', views.process, name='process'),
-    path('verify/<str:id>', views.verify, name='verify')
+    path('verify/<str:id>', views.verify, name='verify'),
+    path('failed/', views.transaction_failed, name='failed'),
 ]

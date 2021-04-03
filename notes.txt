@@ -6,3 +6,5 @@ SECRET_KEY = str(os.getenv('SECRET_KEY'))
 git commit --amend
 git push --force
 git rm -rf --cached
+return render(request, 'paystack/payment.html',
+                  {'email': order.email, 'public_key': public_key, 'total_cost': total_cost})

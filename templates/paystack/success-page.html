@@ -2,5 +2,7 @@
 {% block title %}Payment successful{% endblock %}
 {% block content %}
 <h1>Your payment was successful</h1>
-<p>Your payment has been processed successfully.</p>
+<p>Your payment has been processed and your order has been successfully completed. Your order number is {{ order.id }}
+and your transaction reference is {{ order.transaction_reference_id }}</p>
+<p>Thank you for shopping with MyShop! </p>
 {% endblock %}

@@ -12,7 +12,6 @@ https://docs.djangoproject.com/en/3.1/ref/settings/
 
 from pathlib import Path
 import os
-import braintree
 from dotenv import load_dotenv
 
 load_dotenv()
@@ -47,8 +46,7 @@ INSTALLED_APPS = [
     'shop.apps.ShopConfig',
     'cart.apps.CartConfig',
     'orders.apps.OrdersConfig',
-    'payment.apps.PaymentConfig',
-    'paystack',
+    'paystack.apps.PaystackConfig',
 ]
 
 MIDDLEWARE = [
@@ -149,18 +147,6 @@ EMAIL_HOST_PASSWORD = str(os.getenv('EMAIL_HOST_PASSWORD'))
 EMAIL_PORT = int(os.getenv('EMAIL_PORT'))
 
 EMAIL_USE_TLS = True
-
-# Braintree settings
-BRAINTREE_MERCHANT_ID = str(os.getenv('BRAINTREE_MERCHANT_ID'))  # Merchant ID
-BRAINTREE_PUBLIC_KEY = str(os.getenv('BRAINTREE_PUBLIC_KEY'))  # Public Key
-BRAINTREE_PRIVATE_KEY = str(os.getenv('BRAINTREE_PRIVATE_KEY'))  # Private key
-
-BRAINTREE_CONF = braintree.Configuration(
-    braintree.Environment.Sandbox,
-    BRAINTREE_MERCHANT_ID,
-    BRAINTREE_PUBLIC_KEY,
-    BRAINTREE_PRIVATE_KEY
-)
 
 PAYSTACK_PUBLIC_KEY = str(os.getenv('PAYSTACK_PUBLIC_KEY'))
 PAYSTACK_SECRET_KEY = str(os.getenv('PAYSTACK_SECRET_KEY'))
