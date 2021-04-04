@@ -1,4 +1,4 @@
-html = ''''''
+html = '''<tr class="row{% cycle "1" "2" %}">'''
 html = html.strip()
 html = html.split('\n')
 
